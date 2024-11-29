@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace clusterNaomi.Shared.Entities
 {
-    internal class Store
+    public class Store
     {
         public int Id { get; set; }
         [Required] //Esto significa que será un campo requerido, o sea, obligatorio

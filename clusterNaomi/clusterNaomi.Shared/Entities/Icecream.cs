@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace clusterNaomi.Shared.Entities
 {
-    internal class Icecream
+    public class Icecream
     {
         public int Id { get; set; } //El ID en automatico es autonumerico y es un key
         [Required] //Esto significa que será un campo requerido, o sea, obligatorio
