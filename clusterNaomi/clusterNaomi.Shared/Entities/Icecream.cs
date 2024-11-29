@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,5 +19,8 @@ namespace clusterNaomi.Shared.Entities
         public string Description { get; set; }
         public float Price { get; set; }
 
+        // Clave foránea para la tienda
+        [Required]
+        public int StoreId { get; set; }
     }
 }

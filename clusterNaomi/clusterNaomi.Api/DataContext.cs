@@ -23,6 +23,7 @@ namespace clusterNaomi.Api
             modelBuilder.Entity<Store>()
                 .HasMany(s => s.Icecreams)
                 .WithOne()
+                .HasForeignKey(i => i.StoreId)
                 .OnDelete(DeleteBehavior.Cascade); // Con esto los helados se eliminan cuando se quita una tienda
         }
 

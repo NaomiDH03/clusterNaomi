@@ -36,14 +36,21 @@ namespace clusterNaomi.Api.Controllers
 
             return Ok(store);
         }
-        [HttpPost] //Metodo post
+        [HttpPost]
         public async Task<IActionResult> PostAsync(Store store)
         {
+            // Asegúrate de que las relaciones de helados tengan la tienda correcta
+            foreach (var icecream in store.Icecreams)
+            {
+                icecream.StoreId = store.Id;  // Establecer el StoreId para cada helado
+            }
+
             dataContext.Stores.Add(store);
             await dataContext.SaveChangesAsync();
-            return Ok(store);
 
+            return Ok(store);
         }
+
         [HttpPut] //Metodo put
         public async Task<IActionResult> PutAsync(Store store)
         {
