@@ -7,7 +7,6 @@ namespace clusterNaomi.Api
     {
         public DbSet<Icecream> Icecreams { get; set; }
         public DbSet<Store> Stores { get; set; }
-
         public DataContext(DbContextOptions<DataContext> dbContext) : base(dbContext)
         {
         }
@@ -17,7 +16,7 @@ namespace clusterNaomi.Api
 
             // Índices únicos
             modelBuilder.Entity<Icecream>().HasIndex(x => x.Flavour).IsUnique(); // Para sabores únicos
-            modelBuilder.Entity<Store>().HasIndex(x => x.Name).IsUnique();       // Para nombres de tienda únicos
+            modelBuilder.Entity<Store>().HasIndex(x => x.Name).IsUnique();
 
             //Esto es para que se elimina en cascada
             modelBuilder.Entity<Store>()

@@ -15,12 +15,12 @@ namespace clusterNaomi.Shared.Entities
         [MaxLength(100, ErrorMessage = "El campo{0} debe tener máximo {1} caracteres ")]
         //Nota: El required y MaxLenght solo afecta a la propiedad siguiente, o sea, Flavour
         [Display(Name = "Helado" )]
-        public string Flavour { get; set; }
-        public string Description { get; set; }
+        public string Flavour { get; set; } = null!;
+        public string Description { get; set; } = null!;
         public float Price { get; set; }
 
         // Clave foránea para la tienda
         [Required]
-        public int StoreId { get; set; }
+        public int StoreId { get; set; } 
     }
 }
